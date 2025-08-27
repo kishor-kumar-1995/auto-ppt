@@ -1,0 +1,165 @@
+Wind energy resource assessment and wind turbine selection analysis for sustainable energy production
+Paraschiv Spiru & Paraschiv Lizica Simona 
+Scientific Reports volume 14, Article number: 10708 (2024) Cite this article
+Abstract
+The objective of this study is to perform an analysis to determine the most suitable type of wind turbine that can be installed at a specific location for electricity generation, using annual measurements of wind characteristics and meteorological parameters. Wind potential analysis has shown that the analyzed location is suitable for the development of a wind farm. The analysis was carried out for six different types of wind turbines, with a power ranging from 1.5 to 3.0 MW and a hub height set at 80 m. Wind power potential was assessed using the Weibull analysis. The values of the scale coefficient c were determined, and a large monthly variation was observed, with values ranging from 1.92 to 8.36 m/s and an annual value of 4.95 m/s. Monthly values for the shape coefficient k varied between 0.86 and 1.53, with an annual value of 1.07. Additionally, the capacity factor of the turbines was determined, ranging from 17.75 to 22.22%. The Vestas turbine, with a nominal power of 2 MW and a capacity factor of 22.22%, proved to be the most efficient wind turbine for the specific conditions of the location. The quantity of greenhouse gas emissions that will be reduced if this type of turbine is implemented was also calculated, considering the average CO2 emission intensity factor (kg CO2/kWh) of the national electricity system.
+Similar content being viewed by others
+Innovative transformer neural network for wind density function estimation at different hub heights of turbine
+Article Open access
+01 July 2025
+A novel approach to wind energy modeling in the context of climate change at Zaafrana region in Egypt
+Article Open access
+04 March 2025
+Innovation in clean energy from man-made wind and small-wind generation
+Article Open access
+02 October 2024
+Introduction
+Renewable energy has increasingly gained importance to reduce pollution, CO2 emissions, mitigate climate change, and promote sustainable development1.
+The world is undergoing an energy transition to limit climate change, with the main basis of this transition being the acceleration of clean energy use2. The Intergovernmental Panel on Climate Change (IPCC) has highlighted the need for immediate action to limit the increase in the global average temperature to 1.5 °C. The total annual greenhouse gas emissions, approximately 14.6 Gt CO2eq can be attributed to coal burning, making it responsible for about 30% of total greenhouse gas emissions3. Figure 2 displays the monthly average carbon dioxide concentration starting from 2000. It can be observed that there was an increase of 5.27% between 2000 and 2010, 11.95% between 2000 and 2020, and 14.44% until January 2024. Renewable energy sources represent a significant alternative to burning fossil fuels. The International Energy Agency emphasizes that the development of hydro, wind, and solar energy is crucial for achieving the global goal of "net zero" greenhouse gas emissions4. The amount of electricity produced from these renewable sources largely depends on weather conditions. Changes in wind speed and direction affect the continuity of energy generation in wind farms.
+Generating renewable energy from wind is among the most effective ways to reduce carbon emissions and achieve carbon neutrality5. However, the wind resource is susceptible to be impacted by climate change, as global temperature rise will reshape patterns of atmospheric circulation6. Due to the evolution of global temperatures and atmospheric movement patterns under climate variability, significant changes may occur in the spatial and temporal distributions of wind resources in the future.
+
+The assessment of wind energy requires data collection and the use of analytical methods and techniques to estimate the availability of winds for a wind turbine over its lifetime7. Information about wind availability is essential for determining how much energy the wind energy farm will produce, to define its mode of operation, and ultimately, to estimate its economic viability. Therefore, the use of successful forecasting models is vital to provide useful predictions regarding the wind energy potential of interest for the long-term development of wind farms8.
+
+Before installing a wind turbine, the measurement and analysis of wind resources must be carried out to assess the potential for wind energy generation and to select the appropriate wind turbine model9,10. The power produced by a wind turbine varies considerably depending on the distribution of wind speed, even if the average wind speed is the same. This is because wind energy is determined by the cube of the wind speed, while the average wind speed is determined by the arithmetic mean. Generally, wind resources must be measured for at least one year (Kose, 2004; Kang et al., 2021), but there are several limitations, including cost-related issues, such as site selection, installation of weather masts or LiDAR after physical and geotechnical ocean studies, and additional maintenance11,12.
+
+Wind energy stands out as one of the rapidly growing renewable energy sources in recent years. According to the 2021 Global Wind Energy Statistics and as shown in Fig. 1, the countries with the highest onshore wind energy capacity by the end of 2021 were China, with 39.34% (278,324 MW), followed by the United States with 17.28% (122,275 MW), and Europe with 27.43% (194,075 MW) of the total installed capacity13. Figure 1 shows that the global total onshore wind energy capacity installed in 2021 increased by 14% compared to the capacity installed in 2020 (Fig. 2).
+
+Figure 1
+figure 1
+Global distribution of onshore wind power in 2021 (Python 3.11, https://www.python.org).
+
+Full size image
+Figure 2
+figure 2
+Global average of atmospheric carbon dioxide (ppm)14,15,16,17 (Python 3.11, https://www.python.org).
+
+Full size image
+As a result, accurately estimating the wind potential for a specific location and selecting the optimal type of wind turbine for installation are critical analyses in wind farm development18,19. Following an assessment of wind potential at a specific location, the process of selecting the most efficient turbine for installation becomes crucial. An incorrect selection could lead to inefficient financial investment due to energy underproduction20. Various methods have been employed by different authors to address the issue of choosing the optimal wind turbine for a specific location, utilizing the wind turbine capacity factor21. Waldemar Kuczynski and colleagues conducted a study for two locations in Poland to select an optimal wind turbine based on annual wind measurements and various nominal turbine powers22.
+
+Regarding wind speed measurement data, Rajat Kanti Samal confirmed the importance of meteorological data measured at the analyzed location for wind resource assessment, demonstrating that wind energy density calculated using NASA MERRA-2 satellite data showed significant differences in hourly, monthly, and seasonal variations and presented better correlations only for longer periods of at least one year23.
+
+Many studies have been conducted to determine wind potential; however, no method can precisely predict wind potential in any location due to the highly variable nature of wind speed, influenced by variable meteorological factors specific to each site.
+
+The evaluation of wind potential at a specific location is a multi-stage analytical and assessment process. In general, there is no one, precise method for assessing wind potential at a location as it depends on a variety of factors and variables. The most commonly methods and techniques for assessing wind potential include the analysis of on-site measured meteorological data, GIS analysis, and machine learning.
+(8)
+where 
+, barometric pressure (N/m2). 
+, measured temperature (K). 
+, temperature lapse rate 0.0065 (K/m). h, interested height (m). 
+, reference height (m). R = universal gas constant: 8314.4598 J/(kmol·K). g, gravitational acceleration: 9.81 m/s2. M, molar mass of Earth's air: 28.9644 kg/kmol.
+
+The variation of temperature with altitude based on the lapse rate was calculated using Eq. (9):
+
+(9)
+The equation for computing the variation of density as a function of height in the troposphere, considering changes in relative pressure and temperature changes, is:
+
+(10)
+where 
+ air mass density at sea level 1.225 kg/m3.
+
+The available wind energy Ea for a time of N hours is given by the relation 11:
+
+(11)
+The recoverable energy at the investigated site, based on the power curve characteristics of the wind turbine, is determined with the relation 1243:
+
+(12)
+where Vc_in is the cut-in speed of wind turbine; Vr is the rated wind speed of wind turbine; Vc_out is the cut-out wind speed of wind turbine.
+
+The capacity factor allows us to determine the most suitable turbine for installation at the analyzed location, as follows:
+
+(13)
+The maximum annual energy Ei, that can be generated by the wind turbine is given by the relationship (14):
+
+(14)
+Ew—rated turbine power, (kW).
+
+Carbon emission savings are calculated using the emission factor, 
+, for the national electricity generation system. The annual emission savings, denoted as VCO2 (t CO2/year), are calculated by multiplying the total annual energy output of the wind turbine, represented as Eer (MWh/year), by the emission factor 
+ (t CO2/MWh) for the reference scenario of the national electricity production system 44.
+
+(15)
+Results and discussions
+Analysis of wind data
+The Weibull distribution is determined by two parameters, c and k, which are the scale and shape parameters, respectively. Figure 9 shows the monthly PDF curves. We observed that if k increases, the Weibull density function becomes narrower and larger. In addition, if k increases, the tip of the curve shifts to the right. If the period is not too short, the meteorological data collected can be reasonably described by the Weibull density function.
+
+Figure 9
+figure 9
+Monthly variation of the Weibull probability density function and the cumulative distribution function at the analyzed location.
+
+Full size image
+Based on hourly meteorological data measured in 2020, Weibull parameters (“k” shape coefficient and “c” scale coefficient) that describe the profile of the Weibull distribution curve were calculated.
+
+The “k” shape parameter was determined to be between 0.86 and 1.53 for the hub's 80 m height, with a minimum in November and a maximum in March. Meanwhile, the Weibull scale parameter "c" ranged between 1.92 and 8.37 m/s, with a minimum in November and a maximum in February. Figure 11 depicts the monthly variation of these parameters. It can also be seen that as the wind speed increases, the value of the scale parameter does as well.
+
+According to Fig. 9, the cumulative frequency varies between 21 and 67% for wind speeds greater than 4 m/s at a height of 80 m. Furthermore, the cumulative frequency indicated that the likelihood of higher wind speeds exceeding 20 m/s was reduced in 2020. The probability of wind speed between 4 and 20 m/s for this site is quite high, as this is the typical operating range of the most of wind turbines analyzed. The turbines considered in the study have a cut in wind speed of 3.5–4.5 m/s and a nominal speed of 10.5–15 m/s.
+
+Short periods of time, such as an hour or a day, are not well-described by a Weibull or any other statistical function, but for longer periods of time, such as several weeks to a year or more, Weibull generally matches the observed data reasonably well. Figure 10 presents the annual PDF and CDF functions. For the annual variation, the Weibull coefficients c and k were 4.95 and 1.07. When k is greater than the unit, PDF equals zero at zero wind speeds. As a result, the Weibull density function cannot adapt a zero-speed wind speed curve. This is not a serious issue for wind power applications because the output of a wind turbine would be zero at a wind speed lower than the turbine cut in wind speed. As shown in Fig. 10, the Weibull distribution accurately describes wind speed on an annual basis (Fig. 11).
+
+Figure 10
+figure 10
+Annual variation of the Weibull probability density function and the cumulative distribution function.
+
+Full size image
+Figure 11
+figure 11
+Monthly and annual variation of Weibull coefficients.
+
+Full size image
+The Wind Power Density (WPD) was determined by measuring wind speed at the analyzed location and considering the air density. Wind speed data collected from the meteorological station at a height of 10 m was extrapolated to the turbine hub height (80 m) using the power law to account for altitude variations in wind speed. Air density, influenced by altitude, temperature, and pressure, was determined using the ideal gas law and standard values. The formula for wind energy density derives from the principles of kinetic energy and considers the cubic impact of wind speed. WPD was then used to estimate energy production at the analyzed location.
+
+According to Fig. 12, the average monthly wind speed in the analyzed location ranged between 2.07 and 7.71 m/s, and the wind power density ranged between 50 and 910 W/m2 with an annual value of 290 W/m2.
+
+Figure 12
+figure 12
+Monthly and annual variation of wind power density and monthly average wind speed variation.
+
+Full size image
+It was observed that for the same average wind speed of 4.29 m/s in January and September, the value of WPD varies greatly, being 347 and 273 W/m2 respectively, indicating that the approach of WPD analysis based on average wind speed in a location can lead to significant errors, with the variation in this case being around 21%.
+
+Energy production
+Figures 13 and 14 presents the distribution of energy production as well as the power curves for the turbines under consideration. According to data analysis, the Vestas 3.0 MW turbine reaches its maximum power at a wind speed of 15 m/s, whereas the Vestas 2.0 MW turbine reaches its maximum power at a wind speed of 13 m/s, allowing it to achieve higher performance.
+
+Figure 13
+figure 13
+Power curves and energy produced by turbines for various wind speed frequencies: (a) Sinovel—1.5 MW, (b) AAER—1.5 MW, (c) Vestas—2.0 MW, (d) AAER—2.0 MW.
+
+Full size image
+Figure 14
+figure 14
+Power curves and energy produced by turbines for various wind speed frequencies:—(a) Vestas—3.0 MW, (b) Sinovel—3.0 MW.
+
+Full size image
+The number of hours available annually for the analyzed turbines when the wind speed is strong enough for the wind turbines to operate at nominal power is between 536 and 950 h, and the total number of operating hours for speeds between cuts-in and cut-out is between 4624 and 5694.
+
+Capacity factor and avoided CO2 emissions
+Wind turbines performance is essential for the development of wind energy project at the location. The selection of a wind turbine suitable for the conditions of the wind potential from the analyzed location is very important because this process will influence the energy production and respectively the objective of obtaining maximum efficiency. Wind turbines' annual energy production for this location was analyzed based on their capacity factor which refers to the ratio of the actual output of the wind turbines to their maximum potential output.
+
+The value of the capacity factor is influenced by the sporadic nature of the wind speed, the number of hours the wind turbines are operational, and their efficiency.
+
+The energy production and capacity factor of six different wind turbines with nominal powers ranging from 1.5 MW to 3.0 MW were determined and presented in Fig. 15. The annual energy production was calculated using the power curve of each wind turbine and the number of operating hours calculated for each speed range.
+
+Figure 15
+figure 15
+Energy production, avoided emissions, and capacity factor for the turbines investigated: (a) Sinovel—1.5 MW, (b) AAER—1.5 MW, (c) Vestas—2.0 MW, (d) AAER—2.0 MW, (e) Vestas—3.0 MW, (f) Sinovel—3.0 MW.
+
+Full size image
+Figure 15 illustrates the annual energy produced and the value of the capacity factor for all the wind turbines studied. The maximum annual energy production of 4842 MWh is achieved for a capacity factor of 18.43% of the Sinovel wind turbine − 3.0 MW, as shown in Fig. 15. The minimum annual energy production was obtained as 2791 MWh, but for a capacity factor of 21.24% of the AAER turbine − 1.5 MW. The annual energy generated by the six wind turbines was estimated to be between 2791 and 4842 MWh, as shown in Fig. 15.
+
+This figure also shows the annual amount of emissions avoided due to the use of renewable energy sources respectively through the operation of the wind turbines that are being investigated. The avoided emissions are expressed in tons of CO2 equivalent, and an emission index of 213.37 g CO2/kWh specific to the Romanian electricity network in 2020 was used for their calculation45. Annual emissions not released due to wind turbine electricity production were calculated to be between 596 and 1033 t CO2 equivalent.
+
+Conclusions
+Electricity prices have risen dramatically in recent years because of policies aimed at limiting global average temperature rise to a maximum of 1.5 °C. As a result, there is an increased need to generate electricity from renewable sources, and wind energy is a source capable to produce electricity at affordable prices.
+
+To analyze which type of wind turbine best fits the wind resources of the investigated location in terms of power, this paper has reviewed and compared six wind turbines with three different powers, namely 1.5, 2, and 3 MW, from three different manufacturers: Sinovel, AAER, and Vestas. The comparative analysis of the wind turbines regarding wind speed, turbine energy production, and capacity factor showed that the most suitable wind turbine for installation at the location is the one with a nominal power of 2 MW. The analyzed location is situated between two areas with high wind potential, where wind parks composed of wind turbines with powers ranging from 2 to 2.5 MW in the north and 2.5 MW in the south are built.
+
+The wind characteristics and wind energy potential of an onshore location in southeastern Romania were examined in this study. At the analyzed location, the average monthly wind power density ranges from 50 to 910 W/m2 for a height of 80 m, while the Weibull shape and scale parameters range from 0.86 to 1.53 and 1.92 to 8.37 m/s, respectively.
+
+The calculated energy production for six different types of commercially available wind turbines with powers ranging from 1.5 to 3.0 MW is in the range of 2791–4842 MWh per year, with a capacity factor ranging from 17.75 to 22.22%. The Vestas wind turbine − 2 MW has the highest capacity factor of 22.22%, with an estimated maximum annual energy production of 3893 MWh.
+
+The wind turbine with the highest power production was Sinovel 3.0 MW, which produced 4842 MWh but had a capacity factor of only 18.43%.
+
+Even if the energy production generated by the Sinovel 3.0 MW turbine was the highest, the analysis of the capacity factor shows that it operates at maximum capacity for only a very short period of the year, and therefore the power of this turbine is oversized for the wind potential in the analyzed area.
+
+The evaluation of the wind energy potential of the analyzed site concluded that the most suitable turbines for power generation are those with a power of 2 MW, which also have the higher capacity factor.
+
+Although the analyzed site does not have the same elevation as the adjacent locations, it can be observed that this lower level still creates a sufficiently intense air flow, making this location suitable for installing wind turbines to exploit the area's wind potential.
