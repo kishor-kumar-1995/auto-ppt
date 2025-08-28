@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Auto PPT Generator</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        h1 { color: #333; }
+        label { display: block; margin-top: 15px; font-weight: bold; }
+        textarea { width: 100%; }
+        input[type="file"], input[type="text"], input[type="password"] { width: 100%; }
+        button { margin-top: 20px; padding: 10px 20px; font-size: 16px; }
+        #status { margin-top: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Auto PPT Generator</h1>
+    <form id="pptForm">
+        <label for="text_input">Paste Your Text:</label>
+        <textarea name="text_input" id="text_input" rows="15" required></textarea>
+
+        <label for="guidance">Optional Guidance (e.g., investor pitch deck):</label>
+        <input type="text" id="guidance" name="guidance" placeholder="Optional guidance">
+
+        <label for="template_file">Upload PPT Template (.pptx/.potx):</label>
+        <input type="file" id="template_file" name="template_file" accept=".pptx,.potx" required>
+
+        <label for="api_key">LLM API Key:</label>
+        <input type="password" id="api_key" name="api_key" required>
+
+        <button type="submit">Generate PPT</button>
+    </form>
+
+    <div id="status"></div>
+
+    <script>
+        const form = document.getElementById("pptForm");
+        const status = document.getElementById("status");
+
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            status.textContent = "Generating PPT, please wait...";
+            
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch("/generate-ppt", {
+                    method: "POST",
+                    body: formData
+                });
+
+                if (!response.ok) {
+                    const err = await response.json();
+                    status.textContent = "Failed to generate PPT: " + (err.error || response.statusText);
+                    return;
+                }
+
+                const blob = await response.blob();
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement("a");
+                a.href = url;
+                a.download = "generated.pptx";
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+                status.textContent = "PPT generated successfully!";
+            } catch (err) {
+                status.textContent = "Failed: " + err.message;
+            }
+        });
+    </script>
+</body>
+</html>
